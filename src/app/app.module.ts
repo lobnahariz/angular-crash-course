@@ -6,16 +6,22 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import {MyFirstCompComponent} from "./my-first-comp/my-first-comp.component";
 import {FormsModule} from "@angular/forms";
-import {MessageDetailsComponent} from "./message-details/message-details.component"; // si tu as des routes
+import {MessageDetailsComponent} from "./message-details/message-details.component";
+import {MenuComponent} from "./menu/menu.component";
+import {AboutComponent} from "./about/about.component";
+import {MyFirstService} from "./services/my-first.service";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {ProductsComponent } from './products/products.component';
 
 @NgModule({
-  declarations: [AppComponent, MyFirstCompComponent, MessageDetailsComponent],
+  declarations: [AppComponent, MyFirstCompComponent, MessageDetailsComponent,MenuComponent, AboutComponent, ProductsComponent, ProductDetailComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MyFirstService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
